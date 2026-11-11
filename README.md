@@ -4,7 +4,9 @@ A voice agent for a made-up kayak-hire business on Waiheke Island. Callers can t
 
 Built with [ElevenLabs ElevenAgents](https://elevenlabs.io/docs/agents-platform/overview), Next.js 16 on Vercel, Twilio and Upstash Redis.
 
-**Live demo:** _add your Vercel URL_ · **Phone:** _add your Twilio number_
+**Live demo:** [oneroa.atodev.xyz](https://oneroa.atodev.xyz) (web voice chat) · **Phone:** coming soon
+
+**Status:** the web voice chat is live. The tool endpoints and post-call webhook are built and unit-tested but not yet connected to the agent. The Twilio number is next.
 
 ## What it shows
 
@@ -130,7 +132,7 @@ _Fill this in while building: date, what broke, root cause, fix._
 
 | Date | What broke | Root cause | Fix |
 | --- | --- | --- | --- |
-| | | | |
+| 2026-11 | "Talk to the agent" failed; token endpoint returned 502 | ElevenLabs returned 401: the API key had read-only ElevenAgents permission, and the conversation token call needs Write | Gave the key ElevenAgents Write access; noted the requirement in `.env.example` |
 
 ## Design notes
 
