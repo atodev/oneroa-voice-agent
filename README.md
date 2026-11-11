@@ -115,7 +115,7 @@ Problems you're likely to hit, roughly in the order I'd check them with a custom
 
 | Symptom | Likely cause | How to confirm / fix |
 | --- | --- | --- |
-| "Talk to the agent" fails with a token error | Missing or wrong `ELEVENLABS_API_KEY` / `ELEVENLABS_AGENT_ID`, or the key lacks ElevenAgents permission | `/api/health`; Vercel function logs show the upstream status (401 = key, 404 = agent ID) |
+| "Talk to the agent" fails with a token error | Missing or wrong `ELEVENLABS_API_KEY` / `ELEVENLABS_AGENT_ID`, or the key lacks ElevenAgents **Write** permission (`convai_write`) | `/api/health`; Vercel function logs show the upstream status (401 = key, 404 = agent ID) |
 | Mic prompt never appears | Page not served over HTTPS, or permission previously denied | Use `localhost` or the Vercel URL; reset site permissions in the browser |
 | Agent says it can't reach the booking system | Wrong tool URL, `x-tool-secret` mismatch (401), or the deployment still has old env vars | Tool call details on the conversation in the ElevenLabs dashboard; Vercel logs; redeploy after changing env vars |
 | Agent books the wrong day | Agent timezone not set, so `{{system__time}}` is UTC | Set the timezone to Pacific/Auckland in agent settings |
